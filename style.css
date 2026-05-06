@@ -1,7 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+:root {
+    --primaryfont: "MuseoModerno";
+    --secfont: poppins;
+    --greygreen: #263238;
+    --darkgreen: #2E7D32;
+    --lightgreen: #A5D6A7;
+    --white: #D9D9D9;
+}
+
+body {
+    background-color: whitesmoke;
+    position: relative;
+    z-index: -2;
 }
 
 .flex {
@@ -10,13 +29,22 @@
     align-items: center;
 }
 
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
 header nav {
 
-backdrop-filter: blur(20px);
-    margin-top: 30px;
+    backdrop-filter: blur(15px);
+    margin-top: 35px;
     border-radius: 100px;
-    width: 85%;
-    height: 80px;
+    width: 80%;
+    height: 60px;
     background-color: rgba(0, 0, 0, 0.192);
     position: fixed;
     z-index: 9;
@@ -26,34 +54,282 @@ backdrop-filter: blur(20px);
 
 
 .hero {
-    text-align: center;
-    width: 100%;
-}
-
-.box1 {
-    margin-bottom: 100vh;
-    z-index: 8;
-    width: 100%;
-    height: 95vh;
-    background-color: rgb(194, 123, 29);
-    border-radius: 0px 0px 100px 100px;
-
-}
-
-.box2 {
+    padding: 50px 12%;
     z-index: -1;
+    background-size: cover;
+    width: 100%;
     position: fixed;
     top: 0px;
-    width: 100%;
-    background-image: url("https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    height: 90vh;
+    background-image: url(images/hero-bg.png);
 }
 
 
-.container2 {
-    height: 100vh;
-    background-color: rgb(14, 17, 180);
+.heroleft {
+    flex-direction: column;
+    align-items: start;
+    width: 60%;
+}
+
+.heroright {
+    align-items: flex-end;
+    width: 40%;
+    height: 80%;
+
+}
+
+.heroright img {
+    width: 110%;
+    margin-bottom: -100px;
+
+}
+
+.heroleft h1 {
+    line-height: 1.2em;
+    width: 90%;
+    font-size: 75px;
+    font-weight: 600;
+    color: var(--darkgreen);
+    font-family: var(--primaryfont);
+}
+
+.heroleft p {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--greygreen);
+    font-family: var(--secfont);
+}
+
+.hero a {
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--greygreen);
+    color: var(--white);
+    font-family: var(--secfont);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.b1 {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 22px;
+}
+
+.b2 {
+    width: 100%;
+    padding: 10px 22px;
+    height: 100%;
+    background-color: var(--darkgreen);
+    transition: 0.15s all ease-in;
+}
+
+.button {
+    transition: 0.15s all ease-in;
+    filter: invert();
+    height: 18px;
+    width: 18px;
+    background-image: url(images/arrow\ icon.png);
+    margin-left: 10px;
+}
+
+.hero a:hover .b2 {
+    transform: translatey(-100%);
+}
+
+.hero a:hover .button {
+    transform: rotatez(45deg);
+}
+
+.categories {
+    padding: 80px 15%;
+    margin-top: 80vh;
+    background-color: var(--greygreen);
+    border-radius: 150px 150px 0px 0px;
+}
+
+.cate-heading {
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cate-heading div {
+    width: 10%;
+    height: 2px;
+    background-color: var(--lightgreen);
+
+}
+
+.cate-heading h1 {
+    font-family: var(--primaryfont);
+    font-size: 40px;
+    color: var(--lightgreen);
+}
+
+.cate-card-box {
+    gap: 20px;
+    padding: 100px 0px;
+}
+
+.cate-card {
+    transition: 0.2s all ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 25px;
+    width: 33%;
+    background-color: var(--white);
+}
+
+.card-img {
+    width: 100%;
+    height: 390px;
+}
+
+#indoor-plant {
+    background-image: url(images/card-1.png);
+}
+
+.card-content {
+    align-items: flex-end;
+    gap: 10px;
+    padding: 20px 25px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    color: var(--greygreen);
+    width: 90%;
+}
+
+.card-arrow {
+    transition: 0.2s all ease-out;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    background-image: url(images/arrow\ icon.png);
+}
+
+.card-title h3 {
+    font-size: 32px;
+    font-family: var(--primaryfont);
+}
+
+.card-title p {
+    font-weight: 600;
+    font-family: var(--secfont);
+}
+
+.cate-card:hover .card-arrow {
+    transform: rotatez(45deg) scale(1.01);
+}
+
+.cate-card:hover {
+    transform: translatey(-2px);
+}
+
+.plant-care {
+    background-color: var(--white);
+    padding: 80px 15%;
+}
+
+.plant-care-heading {
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.plant-care-heading div {
+    width: 10%;
+    height: 2px;
+    background-color: var(--greygreen);
+
+}
+
+.plant-care-heading h1 {
+    font-family: var(--primaryfont);
+    font-size: 40px;
+    color: var(--greygreen);
+}
+
+.plant-care-cards-container {
+    padding: 50px 0px;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+.plant-care-card {  
+    border-left: var(--darkgreen) 12px solid;
+    position: sticky;
+    top: 12vh;
+    overflow: hidden;
+    border-radius: 25px;
+    width: 100%;
+    height: 450px;
+    background-color: var(--greygreen);
+    justify-content: space-between;
+
+    transform-origin: top center;
+    will-change: transform;
+}
+
+@keyframes stackScale {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.92);
+    }
+}
+
+.pcc-content {
+    height: 100%;
+    padding: 80px;
+    width: 55%;
+}
+
+.pcc-img {
+    width: 45%;
+}
+
+.pcc-content h3 {
+    font-family: var(--primaryfont);
+    font-size: 50px;
+    color: var(--white);
+}
+
+.pcc-content p {
+    font-family: var(--secfont);
+    font-weight: 500;
+    color: var(--lightgreen);
+    font-size: 16px;
+}
+
+.pcc-button {
+    width: 20%;
+    font-size: 15px;
+    color: white;
+    margin-top: 150px;
+    font-family: var(--secfont);
+    justify-content: start;
+    gap: 0px;
+}
+
+.pcc-button .button {
+    background-image: url(images/small\ arrow\ icon.png);
+    display: inline-block;
+    filter: none;
+    width: 27px;
+    height: 27px;
+    margin-left: 5px;
+}
+
+.pcc-button:hover .button {
+    transform: rotatez(-45deg);
 }
